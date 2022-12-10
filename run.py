@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-from app import app
+from app import app, Config
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8080)
+    app.run(debug=Config.DEBUG, host=Config.FLASK_RUN_HOST, port=Config.FLASK_RUN_PORT)

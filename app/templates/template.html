@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block css %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+<script src="{{ url_for('static', filename='js/template.js') }}"></script>
+{% endblock%}
+
+{% block main %}
+<h1>Home automation Panel</h1>
+<hr>
+
+<p> View the status of your home lighting</p>
+ 
+
+{% endblock %}

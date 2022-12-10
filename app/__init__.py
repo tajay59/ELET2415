@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_mail import Mail
 from .config import Config
+from .functions import Mqtt, DB
 
 
 app = Flask(__name__)

@@ -5,17 +5,19 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 from .forms import ContactForm
-from app import app
+from app import app, Mqtt, DB
 from app import mail
+from flask import escape, render_template, request, jsonify, send_file, redirect, make_response, session, url_for, abort, send_from_directory
 from flask_mail import Message
-from flask import render_template, request, redirect, url_for, flash
+from time import time
+from json import loads, dumps
 
 
 ###
 # Routing for your application.
 ###
 
-
+mqttCli = Mqtt("/sensor","localhost", 1883)
 
 
 @app.route('/')
@@ -23,7 +25,30 @@ def home():
     """Render website's home page."""
     return render_template('home.html')
 
+# @app.route('/dashboard')
+# def dashboard():
+#     """Render website's Dashboard page."""
+#     return render_template('dashboard.html')
 
+@app.route('/panel', methods=['GET'])
+def panel():
+    """Render website's Home Automation Panel page."""
+    return render_template('panel.html')
+
+
+@app.route('/wc', methods=['GET','POST'])
+def wc():
+    """Render website's Home Automation Panel page."""
+
+    if request.method == 'POST':  
+        print("GOT POST")     
+        data = request.get_json()       
+        print("data ",data) 
+        mqttCli.Publish(f"{data['ID']}", dumps(data))
+        return "ok", 200
+
+    if request.method == 'GET':         
+        return "ok", 200
 
 @app.route('/about/')
 def about():

@@ -8,12 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Flask Starter App</title>
-
+    <title>ELET2415</title>
+    <script src="{{ url_for('static', filename='js/anime.min.js')}}"> </script>
+    <script src="{{ url_for('static', filename='js/gauge.js')}}"> </script>
     <!-- Bootstrap -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gauge.css') }}">
     {% block css %} {% endblock%}
   </head>
   <body>
