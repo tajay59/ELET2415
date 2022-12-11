@@ -244,6 +244,8 @@ window.onload = (event) => {
 
                 let opacity = msg.BEDROOM / 100;
                 gauge4.setValueAnimated(msg.BEDROOM, 2); 
+
+                offIcon.style.display   = "block";
                 if(msg.BEDROOM >= 0 && msg.BEDROOM <= 100){  
 
                     anime({
