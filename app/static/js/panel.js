@@ -240,7 +240,7 @@ window.onload = (event) => {
                 const [detailTitle, detailValue]    = cardDetails.children;
                 const [offIcon1, onIcon1, title]    = bedroomDisplay[0].children[0].children[0].children;
 
-                detailValue.innerHTML = msg.BEDROOM;
+                detailValue.innerHTML = `${msg.BEDROOM}% Dimmed`;
 
                 let opacity = msg.BEDROOM / 100;
                 gauge4.setValueAnimated(msg.BEDROOM, 2); 

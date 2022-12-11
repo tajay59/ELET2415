@@ -45,7 +45,7 @@ def wc():
         data = request.get_json()       
         print("data ",data) 
         mqttCli.Publish(f"{data['ID']}", dumps(data))
-        return "ok", 200
+        return "Well Done!"
 
     if request.method == 'GET':         
         return "ok", 200

@@ -108,8 +108,8 @@
 }
 .display_imagebox1 {
   background-color: #212121;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 7px;
   margin: 5px;
   display: flex;
